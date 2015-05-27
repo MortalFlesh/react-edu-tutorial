@@ -1,0 +1,49 @@
+{
+    "name": "react-edu-tutorial",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "prebuild": "mkdir -p cache",
+        "build:scripts": "browserify . > cache/index.js",
+        "build": "npm run build:scripts",
+        "postbuild:scripts": "uglifyjs cache/index.js > cache/index.min.js",
+        "postbuild": "npm run postbuild:scripts",
+        "watch:scripts": "watch 'npm run build:scripts' src/",
+        "watch": "parallelshell 'npm run watch:scripts'",
+        "start": "npm run watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MortalFlesh/react-edu-tutorial.git"
+    },
+    "keywords": [
+        "react",
+        "search",
+        "filter"
+    ],
+    "author": "MortalFlesh <mortal_flesh@seznam.cz> (https://github.com/MortalFlesh)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/MortalFlesh/react-edu-tutorial/issues"
+    },
+    "homepage": "https://github.com/MortalFlesh/react-edu-tutorial",
+    "dependencies": {
+        "eventemitter3": "~0.1.6",
+        "flux": "~2.0.1",
+        "immutable": "~3.6.2",
+        "react": "0.13.*"
+    },
+    "devDependencies": {
+        "babelify": "~5.0.3",
+        "browserify": "~9.0.0",
+        "parallelshell": "~1.1.0",
+        "uglify-js": "~2.4.16",
+        "watch": "~0.14.0"
+    },
+    "browserify": {
+        "transform": [
+            "babelify"
+        ]
+    }
+}
