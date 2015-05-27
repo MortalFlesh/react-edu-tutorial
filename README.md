@@ -1,1 +1,1 @@
-# react-search-filter-example
+# react-edu-tutorial
