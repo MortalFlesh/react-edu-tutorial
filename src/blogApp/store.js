@@ -11,7 +11,7 @@ const MessageRecord = new Record({
 export const dispatchToken = dispatcher.register(({action, data}) => {
     switch (action) {
         case actions.addMessage:
-            let messages = Immutable.List(getMessages());
+            let messages = List(getMessages());
 
             messages = messages.push(new MessageRecord(data).toMap());
 
@@ -27,3 +27,11 @@ function setToCursor(name, value) {
 export function getMessages() {
     return blogCursor().get('messages');
 }
+
+// ========================================
+// for debug purpose only
+
+// usage - addMessage({id: 3, name: 'Some message'})
+window.addMessage = actions.addMessage;
+
+// ========================================
