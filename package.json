@@ -2,7 +2,7 @@
     "name": "react-edu-tutorial",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "./src/index.js",
     "scripts": {
         "prebuild": "mkdir -p cache",
         "build:scripts": "browserify . > cache/index.js",
