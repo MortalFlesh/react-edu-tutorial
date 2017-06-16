@@ -1,13 +1,6 @@
 import React from 'react';
-import {addons} from 'react/addons';
 
-const Blog = React.createClass({
-    mixins: [addons.PureRenderMixin],
-
-    propTypes: {
-        messages: React.PropTypes.array.isRequired,
-    },
-
+class Blog extends React.Component {
     render() {
         const messages = this.props.messages.map((message) => {
             return <div>messageID = {message.id} | messageName = {message.name}</div>;
@@ -30,6 +23,6 @@ const Blog = React.createClass({
             </div>
         );
     }
-});
+}
 
 export default Blog;

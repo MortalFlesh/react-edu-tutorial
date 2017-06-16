@@ -1,7 +1,8 @@
-import './lib/stateDebugger';
 import React from 'react';
+import {render} from 'react-dom';
+import './lib/stateDebugger';
 import BlogApp from './blogApp/blogApp';
 
 window.tutorial.debug.logStart();
 
-React.render(<BlogApp/>, document.getElementById('blog'));
+render(<BlogApp/>, document.getElementById('blog'));
